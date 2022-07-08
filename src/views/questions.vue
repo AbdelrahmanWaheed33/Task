@@ -50,15 +50,15 @@ export default {
       this.getCurrentQuestion(this.$route.params.id);
     },
     nextQuestion(id) {
-      // console.log("ddddddddddddddddddddddddddddddddddddddddddddd")
+
       if (this.$route.params.id < 10) {
         this.$router.push({ path: `/question/${id + 1}` });
       } else if (this.$route.params.id == 10) {
         this.reachResult = false;
-               console.log( this.$store.state.finallResult)
+              
 
       }
-      // this.$router.push({ path: `/question/${id + 1}` });
+
       this.getCurrentQuestion(this.$route.params.id);
     },
     Refresh() {
@@ -66,7 +66,7 @@ export default {
         this.results = this.$store.getters["AllNewQuestion"];
         this.getCurrentQuestion(1);
 
-        // console.log(this.results);
+
       });
     },
     getCurrentQuestion(id) {
@@ -82,7 +82,6 @@ export default {
     if (!this.$route.params.id == 1) {
       this.$router.push({ path: `/question/${1}` });
     }
-
     this.results = this.$store.getters["AllNewQuestion"];
   },
 };

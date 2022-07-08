@@ -23,7 +23,7 @@
   </b-container>
 </template>
 <script>
-// import { mapState } from "vuex";
+
 
 export default {
   props: ["currentQS"],
@@ -37,7 +37,6 @@ export default {
     };
   },
    computed: {
-
     finallResult(){
        return this.$store.state.finallResult
     }
@@ -51,10 +50,10 @@ export default {
         this.currentQS.is_pass = false;
         this.currentQS.answer = this.selected;
       }
-      // console.log(this.currentQS)
+ 
     },
     addAnswer() {
-      // console.log(this.selected);
+
       if (this.selected) {
         this.finall_result = [...this.$store.getters["AllNewQuestion"]];
         this.finall_result.forEach((element) => {
@@ -62,8 +61,6 @@ export default {
             this.$store.state.finallResult=[...this.finall_result]
             element = this.currentQS;
           this.$emit("next-question");
-            // console.log( this.$store.state.finallResult)
-            // console.log(this.finall_result)
 
 
           }
