@@ -10,6 +10,7 @@
         :options="currentQS.incorrect_answers"
         class="mb-3"
         buttons
+        stacked
         @change="getValue"
         disabled-field="notEnabled"
       >
