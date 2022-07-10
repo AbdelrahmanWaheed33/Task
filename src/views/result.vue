@@ -13,7 +13,7 @@
       </tr> 
        <tr>
         <td class="bg-primary text-white" :colspan="fields.length">
-         <b-button @click="$router.push({ path: `/question/1` })">Re Test</b-button>
+         <b-button @click="goBack">Re Test</b-button>
         </td>
       </tr>
     </template>
@@ -48,6 +48,12 @@ this.result_items= this.$store.state.finallResult
              }
 
         });
+    },
+    methods: {
+      goBack(){
+        this.$router.push({ path: `/question/1` })
+       this. $store.state.reachResult=true
+      }
     },
 }
 </script>
