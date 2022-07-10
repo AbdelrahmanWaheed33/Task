@@ -15,6 +15,7 @@ const store = new Vuex.Store({
     questions: {},
     currentID:0,
     newquestions: {},
+    reachResult:true,
     finallResult:{},
   },
   getters: {
@@ -57,14 +58,7 @@ const store = new Vuex.Store({
           });
       });
     },
-    getCurrentQS: ({ commit },payload) => {
-      commit("get_current_qs", payload);
 
-
-  
-
-
-    },
   },
 });
 
