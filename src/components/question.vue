@@ -6,15 +6,16 @@
           {{ currentQS.id + 1 }} / {{ currentQS.question }}</b-alert
         >
         <b-form-radio-group
-          v-model="selected"
+          v-model="currentQS.answer"
           :options="currentQS.incorrect_answers"
           class="mb-3"
           buttons
+       
           stacked
           @change="getValue"
           disabled-field="notEnabled"
         >
-          <b-form-radio v-model="selected" name="some-radios" :value="1">{{
+          <b-form-radio  v-model="currentQS.answer" name="some-radios" :value="1">{{
             currentQS.correct_answer
           }}</b-form-radio>
         </b-form-radio-group>
@@ -30,7 +31,8 @@ export default {
   data() {
     return {
       results: [],
-      selected: null,
+      all_checked:[],
+      selected: [],
       correct_selected: [],
       incorrect_selected: [],
       finall_result: [],
@@ -43,12 +45,16 @@ export default {
   },
   methods: {
     getValue(e) {
-      if (this.selected == 1) {
+      // console.log(this.all_checked)
+    this.currentQS.selected_answer=this.selected
+      console.log(this.currentQS)
+
+      if ( this.currentQS.answer == 1) {
         this.currentQS.is_pass = true;
-        this.currentQS.answer = this.selected;
+        // this.currentQS.answer = this.selected;
       } else {
         this.currentQS.is_pass = false;
-        this.currentQS.answer = this.selected;
+        // this.currentQS.answer = this.selected;
       }
     },
     addAnswer() {

@@ -63,7 +63,9 @@ export default {
   },
   created() {
     this.Refresh();
-    if (!this.$route.params.id == 1) {
+
+    if (this.$route.params.id != 1) {
+          // console.log(this.$route.params.id)
       this.$router.push({ path: `/question/${1}` });
     }
     this.results = this.$store.getters["AllNewQuestion"];
