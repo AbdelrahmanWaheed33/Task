@@ -20,8 +20,8 @@
           }}</b-form-radio>
         </b-form-radio-group>
       </b-card-text>
-      <b-button class="mx-4" @click="goBack">Back</b-button>
-      <b-button class="mx-4" @click="addAnswer">Next</b-button>
+      <b-button class="mx-4"  @click="goBack">Back</b-button>
+      <b-button class="mx-4" :disabled="!currentQS.answer" @click="addAnswer">Next</b-button>
     </b-card>
   </b-container>
 </template>
