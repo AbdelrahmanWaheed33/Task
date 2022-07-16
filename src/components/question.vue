@@ -45,20 +45,21 @@ export default {
   },
   methods: {
     getValue(e) {
-      // console.log(this.all_checked)
+     
     this.currentQS.selected_answer=this.selected
-      console.log(this.currentQS)
+  
 
       if ( this.currentQS.answer == 1) {
         this.currentQS.is_pass = true;
-        // this.currentQS.answer = this.selected;
+      
       } else {
         this.currentQS.is_pass = false;
-        // this.currentQS.answer = this.selected;
+      
       }
     },
     addAnswer() {
-      if (this.selected) {
+      if (this.currentQS.answer) {
+
         this.finall_result = [...this.$store.getters["AllNewQuestion"]];
         this.finall_result.forEach((element) => {
           if (element.id == this.currentQS.id) {
